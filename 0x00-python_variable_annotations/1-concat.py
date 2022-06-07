@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-	Module that takes a string str1 and a string str2
- 	and returns a concatenated string
+    Module that takes a string str1 and a string str2
+    and returns a concatenated string
 """
 
 
