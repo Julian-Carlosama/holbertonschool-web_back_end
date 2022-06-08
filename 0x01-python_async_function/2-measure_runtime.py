@@ -9,11 +9,11 @@ import time
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-def measure_time(max_delay: int = 10, n: int = 0) -> float:
+def measure_time(n: int, max_delay: int = 10) -> float:
     """ Return the random time """
     first_time = time.perf_counter()
     asyncio.run(wait_n(max_delay, n))
-    elapsed = time.perf_counter() - first_time
-    total_time = elapsed / n
+    ended = time.perf_counter() - first_time
+    total_time = ended / n
 
     return total_time
