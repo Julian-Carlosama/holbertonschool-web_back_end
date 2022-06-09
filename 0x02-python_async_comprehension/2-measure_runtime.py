@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-
+    Coroutine that will execute async_comprehension 
+    four times in parallel using asyncio.gather.
 """
 import random
 import asyncio
