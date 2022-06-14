@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""
-    2. Hypermedia pagination
-"""
+""" Hypermedia pagination """
 import csv
 import math
 from typing import Tuple, List, Dict
@@ -51,9 +49,7 @@ class Server:
         return self.dataset()[gp_start:gp_end]
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
-        """
-            Returns a dictionary containing the following key-value pairs
-        """
+        """ Returns a dictionary """
 
         page_data = self.get_page(page, page_size)
         total_data = len(self.dataset())
