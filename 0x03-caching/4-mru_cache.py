@@ -4,13 +4,8 @@ from base_caching import BaseCaching
 
 
 class MRUCache(BaseCaching):
-    """A MRU Cache System Class inherited from BaseCaching class
-    Args:
-        cache_data: dictionary representing cache
-        counter: integer, increments when accessing or adding an
-        item to the cache.
-        ages: dictionary with key:key of cache_data value: current
-        counter value.
+    """
+        A MRU Cache System Class inherited from BaseCaching class
     """
     def __init__(self):
         self.counter = 0
@@ -38,4 +33,3 @@ class MRUCache(BaseCaching):
             self.counter += 1
             return self.cache_data.get(key)
         return None
- 
