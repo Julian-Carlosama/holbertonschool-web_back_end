@@ -23,7 +23,7 @@ def filter_datum(fields: List[str], redaction: str,
 
 
 class RedactingFormatter(logging.Formatter):
-    """ 
+    """
         Redacting Formatter class
     """
 
@@ -64,7 +64,6 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
         user=username,
         password=passw,
         host=hosti,
-        #host = os.getenv("PERSONAL_DATA_DB_HOST", "localhost"),
         database=db,
     )
     return connectionDB
