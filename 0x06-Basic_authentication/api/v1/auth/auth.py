@@ -24,7 +24,8 @@ class Auth:
                     return False
         if path in excluded_paths:
             return False
-        return True
+        else:
+            return True
 
     def authorization_header(self, request=None) -> str:
         """ Method that handles authorization header """
