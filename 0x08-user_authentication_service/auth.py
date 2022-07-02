@@ -9,6 +9,11 @@ from uuid import uuid4
 from typing import Union
 
 
+def _hash_password(password: str) -> str:
+    """ Returns a hashed password """
+    return bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+
+
 def _generate_uuid() -> str:
     """
        Returns a string representation
