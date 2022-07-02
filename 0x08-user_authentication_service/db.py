@@ -13,14 +13,14 @@ from user import User
 
 
 class DB:
-	""" Class DB for ORM """
+    """ Class DB for ORM """
 
-	def __init__(self):
-		self._engine = create_engine("sqlite:///a.db", echo=False)
+    def __init__(self):
+        self._engine = create_engine("sqlite:///a.db", echo=False)
         Base.metadata.drop_all(self._engine)
         Base.metadata.create_all(self._engine)
         self.__session = None
-    
+
     @property
     def _session(self):
         """ Sets and gets a session """
@@ -30,18 +30,14 @@ class DB:
         return self.__session
 
     def add_user(self, email: str, hashed_password: str) -> User:
-        """
-        	Saves the user to the DB
-        """
+        """ Saves the user to the DB """
         user = User(email=email, hashed_password=hashed_password)
         self._session.add(user)
         self._session.commit()
         return user
 
     def find_user_by(self, **kwargs) -> User:
-        """
-        	Return: First row found in the users
-        """
+        """ Return: First row found in the users """
         if not kwargs:
             raise InvalidRequestError
 
@@ -58,9 +54,7 @@ class DB:
         return user
 
     def update_user(self, user_id: int, **kwargs) -> None:
-        """
-        	Update users
-        """
+        """ Update users """
         user = self.find_user_by(id=user_id)
 
         column_names = User.__table__.columns.keys()
