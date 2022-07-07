@@ -11,7 +11,7 @@ class TestAccessNestedMap(TestCase):
     """ Testing function Map """
     @parameterized.expand([
         ({"a": 1}, ("a",), 1),
-        ({"a": {"b": 2}}, ("a",), {'b': 2}),
+        ({"a": {"b": 2}}, ("a",), {"b": 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2)
     ])
     def test_access_nested_map(self, map, path, outputResult):
@@ -19,14 +19,14 @@ class TestAccessNestedMap(TestCase):
         self.assertEqual(access_nested_map(map, path), outputResult)
 
     @parameterized.expand([
-        ({}, ("a",), 'a'),
-        ({"a": 1}, ("a", "b"), 'b')
+        ({}, ("a",)),
+        ({"a": 1}, ("a", "b"))
     ])
     def test_access_nested_map_exception(self, map, path, outError):
         """ Method that access nested exection """
         with self.assertRaises(KeyError) as e:
             access_nested_map(map, path)
-            self.assertEqual(outError, e.exception)
+        self.assertEqual(outError, e.exception)
 
 
 class TestGetJson(TestCase):
