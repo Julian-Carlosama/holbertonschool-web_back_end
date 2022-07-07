@@ -49,7 +49,7 @@ class TestMemoize(TestCase):
     """ Class that allow testing memoization """
 
     def test_memoize(self):
-        """ Method that testing memoize function """
+        """ Method that testing memoize functions """
 
         class TestClass:
             """ Test class """
