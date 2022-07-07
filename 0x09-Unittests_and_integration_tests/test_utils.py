@@ -2,7 +2,7 @@
 """ Module Unnitest """
 
 import unittest
-from unittest.mock import patch
+from unittest.mock import patch, Mock
 from parametrized import parameterized
 from unittest import TestCase
 from utils import access_nested_map
@@ -15,7 +15,7 @@ class TestAccessNestedMap(TestCase):
         ({"a": {"b": 2}}, ("a",), {'b': 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2)
     ])
-    def test_access_nested_map(self, mapp, patch, outputResult):
+    def test_access_nested_map(self, map, path, outputResult):
         """ Testing for access_nested-map """
         self.assertEqual(access_nested_map(map, path), outputResult)
 
@@ -23,8 +23,8 @@ class TestAccessNestedMap(TestCase):
         ({}, ("a",), 'a'),
         ({"a": 1}, ("a", "b"), 'b')
     ])
-    def test_access_nested_map_exception(self, map, outError):
+    def test_access_nested_map_exception(self, map, path, outError):
         """ Method that access nested exection """
-        with self.assertRaises(keyError) as e:
+        with self.assertRaises(KeyError) as e:
             access_nested_map(map, path)
             self.assertEqual(outError, e.exception)
