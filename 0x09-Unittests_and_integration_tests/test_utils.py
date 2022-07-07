@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """ Module Unnitest """
 
-import unittest
 from unittest.mock import patch, Mock
 from parametrized import parameterized
-from unittest import TestCase
+from unittest import TestCase, mock
 from utils import access_nested_map
 
 
