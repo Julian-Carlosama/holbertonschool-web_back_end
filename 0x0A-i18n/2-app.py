@@ -28,7 +28,7 @@ def get_locale() -> List[str]:
     return request.accept_languages.best_match(Config.LANGUAGES)
   
 
-@app.route("/", methods=["GET"], strict_slashes=False)
+@app.route("/", methods=["GET"])
 def index():
     """ get the route"""
     return render_template("2-index.html")
