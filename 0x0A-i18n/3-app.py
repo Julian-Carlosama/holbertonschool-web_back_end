@@ -2,9 +2,9 @@
 """ Create routes app """
 
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask_babel import Babel
-from typing import List
+
 app = Flask(__name__)
 babel = Babel(app)
 

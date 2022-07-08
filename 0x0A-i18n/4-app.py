@@ -2,9 +2,9 @@
 """ Create routes app """
 
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask_babel import Babel
-from typing import List
+
 app = Flask(__name__)
 babel = Babel(app)
 
@@ -26,8 +26,8 @@ def get_locale():
     """
     locale = request.args.get("locale")
     if locale:
-           return locale
-    return request.accept_languages.best_match(Config.LANGUAGES)
+    	return locale
+	return request.accept_languages.best_match(Config.LANGUAGES)
 
 
 @app.route("/", methods=["GET"], strict_slashes=False)
