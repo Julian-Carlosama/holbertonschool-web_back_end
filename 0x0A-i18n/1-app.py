@@ -4,6 +4,7 @@
 
 from flask import Flask, render_template, request
 from flask_babel import Babel
+
 app = Flask(__name__)
 babel = Babel(app)
 
@@ -19,7 +20,7 @@ Babel.default_timezone = "UTC"
 
 
 @app.route("/", methods=["GET"], strict_slashes=False)
-def index():
+def index() -> str:
     """ get the route"""
     return render_template("1-index.html")
 
