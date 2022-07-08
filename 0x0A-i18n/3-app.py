@@ -20,17 +20,17 @@ Babel.default_timezone = "UTC"
 
 
 @babel.localeselector
-def get_locale() -> List[str]:
+def get_locale():
     """ Function that determine
     the best match with our supported languages.
     """
     return request.accept_languages.best_match(Config.LANGUAGES)
-  
+
 
 @app.route("/", methods=["GET"], strict_slashes=False)
 def index():
     """ get the route"""
-    return render_template("2-index.html")
+    return render_template("3-index.html")
 
 
 if __name__ == "__main__":
