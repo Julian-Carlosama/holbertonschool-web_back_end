@@ -8,14 +8,14 @@ app = Flask(__name__)
 babel = Babel(app)
 
 
-class Config(object):
+class Config:
     """ Class config """
     LANGUAGES = ["en", "fr"]
-    Babel.default_locate = "en"
-    Babel.default_timezone = "UTC"
 
 
 app.config.from_object(Config)
+Babel.default_locate = "en"
+Babel.default_timezone = "UTC"
 
 
 @app.route("/", methods=["GET"], strict_slashes=False)
