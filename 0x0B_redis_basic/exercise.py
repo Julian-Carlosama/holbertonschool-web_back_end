@@ -35,7 +35,6 @@ def count_calls(method: Callable) -> Callable:
     return wrapper
 
 
-
 class Cache:
     """ Class private instance of the Redis client """
     def __init__(self):
@@ -72,6 +71,7 @@ class Cache:
         except Exception:
             data = 0
         return data
+
 
 def replay(method: Callable):
     """ display the history of calls of a particular function """
