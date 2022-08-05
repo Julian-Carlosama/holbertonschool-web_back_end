@@ -17,7 +17,7 @@ export default class Currency {
   }
 
   set code(new_code) {
-    this._code = new_code;
+    this._name = new_code;
   }
 
   // Getters
