@@ -1,5 +1,5 @@
 export default class HolbertonCourse {
-  constructor (name, length, students) {
+  constructor(name, length, students) {
     // name
     if (Object.getPrototypeOf(name) !== String.prototype) throw TypeError('Name must be a string');
     if (Object.getPrototypeOf(length) !== Number.prototype) throw TypeError('Length must be a number');
