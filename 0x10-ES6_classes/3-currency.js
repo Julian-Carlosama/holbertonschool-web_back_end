@@ -1,8 +1,8 @@
 export default class Currency {
   constructor(code, name) {
     // Objects
-    this._code = code;
-    this._name = name;
+    this.code = code;
+    this.name = name;
   }
 
   // Method
@@ -11,12 +11,12 @@ export default class Currency {
   }
 
   // Setters
-  set name(new_name) {
-    if (typeof new_name === 'string') this._name = new_name;
+  set name(name) {
+    if (typeof name === 'string') this._name = name;
   }
 
-  set code(new_code) {
-    if (typeof new_code === 'string') this._code = new_code;
+  set code(code) {
+    if (typeof code === 'string') this._code = code;
   }
 
   // Getters
