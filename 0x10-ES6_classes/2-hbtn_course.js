@@ -3,7 +3,7 @@ export default class HolbertonCourse {
     // name
     if (Object.getPrototypeOf(name) !== String.prototype) throw TypeError('name must be a string');
     if (Object.getPrototypeOf(length) !== Number.prototype) throw TypeError('length must be a number');
-    if (Object.getPrototypeOf(students) !== Array.prototype) throw TypeError('Students must be an array of strings');
+    if (Object.getPrototypeOf(students) !== Array.prototype) throw TypeError('students must be an array of strings');
     students.forEach((student) => {
       if (Object.getPrototypeOf(student) !== String.prototype) throw TypeError('students must be an array of strings');
     });
