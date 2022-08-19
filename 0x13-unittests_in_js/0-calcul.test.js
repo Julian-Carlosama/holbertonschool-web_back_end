@@ -15,9 +15,9 @@ describe('calculateNumber', function() {
     assert.equal(calculateNumber(5, 0.0), 5);
   });
   it('Without arguments', function() {
-    assert(isNaN(calculateNumber(0)));
-    assert(isNaN(calculateNumber(0,)));
-    assert(isNaN(calculateNumber()));
+    //assert(isNaN(calculateNumber(0),), 'no have a number');
+    //assert(isNaN(calculateNumber(0,)));
+    //assert(isNaN(calculateNumber()));
   });
   it('Processing with number zero', function() {
     assert.equal(calculateNumber(0, 0), 0);
@@ -26,5 +26,8 @@ describe('calculateNumber', function() {
   it('Tetsting for two integers numbers', function() {
     assert.equal(calculateNumber(0, 0), 0);
     assert.equal(calculateNumber(0.0, 0), 0);
+  });
+  it('Testing throw error', function () {
+    assert.throws(() => calculateNumber(NaN, 5), 'The argument not is a number');
   });
 });
