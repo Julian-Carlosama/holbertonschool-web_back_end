@@ -14,9 +14,17 @@ describe('calculateNumber', function() {
   it('Show the result of a + b numbers, when the b is decimal', function() {
     assert.equal(calculateNumber(5, 0.0), 5);
   });
-  it('without arguments', function() {
+  it('Without arguments', function() {
     assert(isNaN(calculateNumber(0)));
     assert(isNaN(calculateNumber(0,)));
     assert(isNaN(calculateNumber()));
-  })
+  });
+  it('Processing with number zero', function() {
+    assert.equal(calculateNumber(0, 0), 0);
+    assert.equal(calculateNumber(0.0, 0), 0);
+  });
+  it('Tetsting for two integers numbers', function() {
+    assert.equal(calculateNumber(0, 0), 0);
+    assert.equal(calculateNumber(0.0, 0), 0);
+  });
 });
